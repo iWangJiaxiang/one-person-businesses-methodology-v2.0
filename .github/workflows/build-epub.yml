@@ -37,5 +37,5 @@ jobs:
       - name: Upload EPUB artifact
         uses: actions/upload-artifact@v4
         with:
-          name: book.epub
-          path: book/epub/book.epub  # mdbook-epub 默认输出路径
+          name: book
+          path: book/  # mdbook-epub 默认输出路径
