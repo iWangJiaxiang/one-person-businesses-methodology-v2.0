@@ -1,5 +1,9 @@
 # 《一人企业方法论》V2.1
 
+## FOLK
+
+通过GitHUb Release添加了预编译版本的图书，供大家下载
+
 ## 2.1 版本
 
 1. 补充《产品构建:从零构建软件产品或服务》相关章节
@@ -30,8 +34,9 @@
 
 ## 电子书
 
+- 可以前往 GitHub Release 进行下载
 - 可使用 mdbook-epub 工具自行编译：`mdbook-epub --standalone true` 然后 epub 在 book 目录下
-- 扫码订阅《方法论》更新频道后下载: [进入](https://subdeer.cn/channel/landing/11)
+- ~~扫码订阅《方法论》更新频道后下载: [进入](https://subdeer.cn/channel/landing/11)~~
 
 ## 在线阅读
 
