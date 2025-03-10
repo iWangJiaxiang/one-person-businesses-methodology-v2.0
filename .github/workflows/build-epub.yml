@@ -35,7 +35,7 @@ jobs:
 
       # 6. 上传生成的 EPUB 文件作为构建产物
       - name: Upload EPUB artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: book.epub
           path: book/epub/book.epub  # mdbook-epub 默认输出路径
