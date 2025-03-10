@@ -54,3 +54,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}  # 从创建 Release 步骤获取上传 URL
           asset_path: book/一人企业方法论.epub  # EPUB 文件路径
           asset_name: 一人企业方法论.epub  # 上传后的文件名
+          asset_content_type: application/epub+zip
