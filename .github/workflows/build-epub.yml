@@ -31,7 +31,7 @@ jobs:
       # 5. 构建 EPUB
       - name: Build EPUB
         run: |
-          mdbook-epub --standalone true
+          mdbook-epub --standalone
 
       # 6. 上传生成的 EPUB 文件作为构建产物
       - name: Upload EPUB artifact
