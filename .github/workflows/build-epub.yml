@@ -33,9 +33,24 @@ jobs:
         run: |
           mdbook-epub --standalone
 
-      # 6. 上传生成的 EPUB 文件作为构建产物
-      - name: Upload EPUB artifact
-        uses: actions/upload-artifact@v4
+      # 6. 创建 GitHub Release
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 提供的默认 token
         with:
-          name: book
-          path: book/  # mdbook-epub 默认输出路径
+          tag_name: ${{ github.ref }}  # 使用触发 Action 的标签
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: false
+      
+      # 7. 上传 EPUB 文件到 Release
+      - name: Upload EPUB to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}  # 从创建 Release 步骤获取上传 URL
+          asset_path: book/一人企业方法论.epub  # EPUB 文件路径
+          asset_name: 一人企业方法论.epub  # 上传后的文件名
